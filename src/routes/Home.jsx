@@ -1,6 +1,6 @@
-import React from 'react';
-import Vegeta from '../components/Vegeta';
-import Popular from '../components/Popular';
+import React from "react";
+import Vegeta from "../components/Vegeta";
+import Popular from "../components/Popular";
 
 const Home = () => {
   return (
@@ -8,7 +8,7 @@ const Home = () => {
       <Vegeta />
       <Popular />
     </div>
-  )
-}
+  );
+};
 
 export default Home;
