@@ -1,0 +1,10 @@
+/* .cuisines-nav {
+  width: 80vw;
+} */
+.cuisines-nav a {
+  display: inline-block;
+  margin: 10px;
+}
+.cuisines-nav h6 {
+  margin: 0;
+}

@@ -4,7 +4,7 @@ import Popular from "../components/Popular";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home-page">
       <Vegeta />
       <Popular />
     </div>

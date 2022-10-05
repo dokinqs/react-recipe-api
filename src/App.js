@@ -1,10 +1,18 @@
+import React from "react";
+import { BrowserRouter as Router, NavLink } from "react-router-dom";
+import Cuisines from "./components/Cuisines";
 import Pages from "./routes/Pages";
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="App-header">Recipes</h1>
-      <Pages />
+    <div>
+      <Router>
+        <NavLink to={"/"}>
+          <h1 className="home-logo">Recipes</h1>
+        </NavLink>
+        <Cuisines />
+        <Pages />
+      </Router>
     </div>
   );
 }
