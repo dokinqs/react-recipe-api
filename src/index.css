@@ -15,3 +15,6 @@ a {
   text-decoration: none;
   color: #54acc4;
 }
+form input {
+  padding: 5px;
+}
