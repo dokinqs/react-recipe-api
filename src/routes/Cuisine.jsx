@@ -15,20 +15,37 @@ const Cuisine = () => {
 
   // cache results for development to save api calls
   const getCuisine = async (name) => {
-    // SHOULD ADD A CHECK TO SEE IF name MATCHES ONE OF THE CUISINES, OTHERWISE EMPTY ARRAY VALUE IS STORED IN LOCALSTORAGE FOR RANDOM KEY if user  inputs random slug. validSlugs = [Chinese, French, Indian, Italian, Korean, Mediterranean, Middle Eastern, Thai, Vietnamese];
-    const inCache = localStorage.getItem(name);
+    // CHECK TO SEE IF name MATCHES ONE OF THE CUISINES
+    const validSlugs = [
+      "Chinese",
+      "French",
+      "Indian",
+      "Italian",
+      "Korean",
+      "Mediterranean",
+      "Middle+Eastern",
+      "Thai",
+      "Vietnamese",
+    ];
+    const isValid = validSlugs.includes(name);
+    if (isValid) {
+      const inCache = localStorage.getItem(name);
 
-    if (inCache) {
-      setCuisine(JSON.parse(inCache));
+      if (inCache) {
+        setCuisine(JSON.parse(inCache));
+      } else {
+        const api = await fetch(
+          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}&number=6`
+        );
+        const data = await api.json();
+
+        localStorage.setItem(name, JSON.stringify(data.results));
+        setCuisine(data.results);
+        console.log(data.results);
+      }
     } else {
-      const api = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}&number=6`
-      );
-      const data = await api.json();
-
-      localStorage.setItem(name, JSON.stringify(data.results));
-      setCuisine(data.results);
-      console.log(data.results);
+      // maybe put 404 page here later for invalid user-entered urls
+      console.log("user entered an invalid cuisine/url");
     }
   };
 
