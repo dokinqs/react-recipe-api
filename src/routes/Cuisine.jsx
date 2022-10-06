@@ -54,9 +54,11 @@ const Cuisine = () => {
       <div className="cuisine cards">
         {cuisine.map((recipe) => (
           <div key={recipe.id} className="cuisine card">
-            <img src={recipe.image} alt={recipe.title} />
-            <div className="gradient"></div>
-            <p>{recipe.title}</p>
+            <Link to={`/recipe/${recipe.id}`}>
+              <img src={recipe.image} alt={recipe.title} />
+              <div className="gradient"></div>
+              <p>{recipe.title}</p>
+            </Link>
           </div>
         ))}
       </div>

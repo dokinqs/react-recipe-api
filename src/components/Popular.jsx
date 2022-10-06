@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Popular.css";
+import { Link } from "react-router-dom";
 
 const Popular = () => {
   const [popular, setPopular] = useState([]);
@@ -37,9 +38,11 @@ const Popular = () => {
         {popular.map((recipe) => {
           return (
             <div key={recipe.id} className="popular card">
-              <img src={recipe.image} alt={recipe.title} />
-              <div className="gradient"></div>
-              <p>{recipe.title}</p>
+              <Link to={`/recipe/${recipe.id}`}>
+                <img src={recipe.image} alt={recipe.title} />
+                <div className="gradient"></div>
+                <p>{recipe.title}</p>
+              </Link>
             </div>
           );
         })}

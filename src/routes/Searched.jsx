@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./Searched.css";
 
 const Searched = () => {
@@ -24,9 +24,11 @@ const Searched = () => {
         {searchedRecipes.map((recipe) => {
           return (
             <div key={recipe.id} className="search card">
-              <img src={recipe.image} alt={recipe.title} />
-              <div className="gradient"></div>
-              <p>{recipe.title}</p>
+              <Link to={`/recipe/${recipe.id}`}>
+                <img src={recipe.image} alt={recipe.title} />
+                <div className="gradient"></div>
+                <p>{recipe.title}</p>
+              </Link>
             </div>
           );
         })}

@@ -1,0 +1,12 @@
+.details {
+  padding: 20px;
+}
+.details img {
+  max-width: 100%;
+}
+.details-instr-summ {
+  max-width: 800px;
+}
+.details-instr-summ p {
+  line-height: 1.5rem;
+}

@@ -5,8 +5,8 @@ import Popular from "../components/Popular";
 const Home = () => {
   return (
     <div className="home-page">
-      <Vegeta />
       <Popular />
+      <Vegeta />
     </div>
   );
 };

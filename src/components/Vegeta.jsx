@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Vegeta = () => {
   const [vegeta, setVegeta] = useState([]);
@@ -42,9 +43,11 @@ const Vegeta = () => {
         {vegeta.map((recipe) => {
           return (
             <div key={recipe.id} className="vegeta card">
-              <img src={recipe.image} alt={recipe.title} />
-              <div className="gradient"></div>
-              <p>{recipe.title}</p>
+              <Link to={`/recipe/${recipe.id}`}>
+                <img src={recipe.image} alt={recipe.title} />
+                <div className="gradient"></div>
+                <p>{recipe.title}</p>
+              </Link>
             </div>
           );
         })}
