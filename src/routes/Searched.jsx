@@ -12,12 +12,21 @@ const Searched = () => {
     );
     const recipes = await data.json();
     setSearchedRecipes(recipes.results);
+    console.log(recipes.results);
   };
 
   useEffect(() => {
     getSearched(params.search);
   }, [params.search]);
 
+  // TODO SHOULD IMPLEMENT A BETTER CHECK
+  if (searchedRecipes == "") {
+    return (
+      <div className="search-error">
+        No results for "{params.search}", please try again.
+      </div>
+    );
+  }
   return (
     <div className="search container">
       <div className="search cards">

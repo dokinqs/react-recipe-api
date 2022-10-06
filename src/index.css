@@ -1,19 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Thasadith:wght@400;700&display=swap");
 * {
   box-sizing: border-box;
 }
 body {
   margin: 0;
-  padding: 20px;
-  font-family: "Helvetica Neue", sans-serif;
+  padding: 0;
+  font-family: "Thasadith", "Helvetica Neue", sans-serif;
 }
 h1,
 h2 {
-  color: #12647b;
-  margin: 5px;
+  color: #333;
+  margin: 10px;
+}
+.home-logo {
+  padding-left: 30px;
+  letter-spacing: 2px;
+  margin-bottom: 0;
+}
+h5 {
+  margin: 0;
+  padding-left: 190px;
+  padding-bottom: 20px;
+  color: #333;
+  letter-spacing: 2px;
 }
 a {
   text-decoration: none;
-  color: #54acc4;
+  color: #92b1ba;
+}
+form {
+  padding-right: 50px;
+  float: right;
 }
 form input {
   padding: 5px;

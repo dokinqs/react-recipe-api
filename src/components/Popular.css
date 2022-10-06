@@ -1,17 +1,20 @@
 .container {
   min-height: 400px;
   padding: 30px;
-  margin: 20px;
+  margin: 50px;
 }
 .popular.container {
-  background-color: #eae1df;
+  background-color: #7f9a7d;
+  border-radius: 30px;
 }
 .vegeta.container {
-  background-color: #dfe8ea;
+  background-color: #aebea1;
+  border-radius: 30px;
 }
 .cards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .card {
   min-height: 300px;

@@ -1,3 +1,8 @@
 .search.container {
-  background-color: #1c608e;
+  background: linear-gradient(to bottom, #a2b4ac, #fff);
+  border-radius: 30px;
+}
+.search-error {
+  width: 300px;
+  margin: 50px auto;
 }

@@ -9,7 +9,8 @@ function App() {
     <div>
       <Router>
         <NavLink to={"/"}>
-          <h1 className="home-logo">Recipes</h1>
+          <h1 className="home-logo">Gud Recipes</h1>
+          <h5>for your gut</h5>
         </NavLink>
         <Search />
         <Cuisines />
