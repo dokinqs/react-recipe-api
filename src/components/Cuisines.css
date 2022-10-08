@@ -5,6 +5,10 @@
   display: inline-block;
   margin: 10px;
 }
+/* active class automatically on navlink when clicked */
+.cuisines-nav a.active {
+  text-decoration: underline;
+}
 .cuisines-nav h6 {
   margin: 0 10px;
 }
