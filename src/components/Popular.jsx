@@ -9,27 +9,36 @@ const Popular = () => {
     getPopular();
   }, []);
 
-  // cache results for development to save api calls
+  // no cache version for production
   const getPopular = async () => {
-    const inCache = localStorage.getItem("popular");
-
-    if (inCache) {
-      setPopular(JSON.parse(inCache));
-    } else {
-      try {
-        const api = await fetch(
-          `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=6`
-        );
-        const data = await api.json();
-
-        localStorage.setItem("popular", JSON.stringify(data.recipes));
-        setPopular(data.recipes);
-        console.log("pop added to cache: ", data.recipes);
-      } catch (err) {
-        console.log(err);
-      }
-    }
+    const api = await fetch(
+      `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=6`
+    );
+    const data = await api.json();
+    setPopular(data.recipes);
   };
+
+  // cache results for development to save api calls
+  // const getPopular = async () => {
+  //   const inCache = localStorage.getItem("popular");
+
+  //   if (inCache) {
+  //     setPopular(JSON.parse(inCache));
+  //   } else {
+  //     try {
+  //       const api = await fetch(
+  //         `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=6`
+  //       );
+  //       const data = await api.json();
+
+  //       localStorage.setItem("popular", JSON.stringify(data.recipes));
+  //       setPopular(data.recipes);
+  //       console.log("pop added to cache: ", data.recipes);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   }
+  // };
 
   return (
     <div className="popular container">

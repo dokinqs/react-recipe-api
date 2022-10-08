@@ -9,38 +9,46 @@ const Cuisine = () => {
     getCuisine(params.type);
   }, [params.type]);
 
-  // cache results for development to save api calls
+  // no cache version for production
   const getCuisine = async (name) => {
-    // check to see if name matches one of the valid cuisines
-    const validSlugs = [
-      "Chinese",
-      "French",
-      "Indian",
-      "Italian",
-      "Korean",
-      "Mediterranean",
-      "Middle+Eastern",
-      "Thai",
-      "Vietnamese",
-    ];
-    const isValid = validSlugs.includes(name);
-    if (isValid) {
-      const inCache = localStorage.getItem(name);
-
-      if (inCache) {
-        setCuisine(JSON.parse(inCache));
-      } else {
-        const api = await fetch(
-          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}&number=6`
-        );
-        const data = await api.json();
-
-        localStorage.setItem(name, JSON.stringify(data.results));
-        setCuisine(data.results);
-        console.log(data.results);
-      }
-    }
+    const api = await fetch(
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}&number=6`
+    );
+    const data = await api.json();
+    setCuisine(data.results);
   };
+
+  // cache results for development to save api calls
+  // const getCuisine = async (name) => {
+  //   // check to see if name matches one of the valid cuisines
+  //   const validSlugs = [
+  //     "Chinese",
+  //     "French",
+  //     "Indian",
+  //     "Italian",
+  //     "Korean",
+  //     "Mediterranean",
+  //     "Middle+Eastern",
+  //     "Thai",
+  //     "Vietnamese",
+  //   ];
+  //   const isValid = validSlugs.includes(name);
+  //   if (isValid) {
+  //     const inCache = localStorage.getItem(name);
+
+  //     if (inCache) {
+  //       setCuisine(JSON.parse(inCache));
+  //     } else {
+  //       const api = await fetch(
+  //         `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}&number=6`
+  //       );
+  //       const data = await api.json();
+
+  //       localStorage.setItem(name, JSON.stringify(data.results));
+  //       setCuisine(data.results);
+  //     }
+  //   }
+  // };
 
   return (
     <div className="cuisine container">

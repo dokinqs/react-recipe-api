@@ -6,20 +6,19 @@ const Recommend = () => {
   const [recRecipes, setRecRecipes] = useState([]);
   let params = useParams();
 
+  useEffect(() => {
+    getRec();
+    // force scroll to top on loading new rec reipe
+    window.scrollTo(0, 0);
+  }, [params.id]);
+
   const getRec = async () => {
     const data = await fetch(
       `https://api.spoonacular.com/recipes/${params.id}/similar?apiKey=${process.env.REACT_APP_API_KEY}&number=3`
     );
     const detailData = await data.json();
     setRecRecipes(detailData);
-    console.log(detailData);
   };
-
-  useEffect(() => {
-    getRec();
-    // force scroll to top on loading new rec reipe
-    window.scrollTo(0, 0);
-  }, [params.id]);
 
   return (
     <div className="rec">

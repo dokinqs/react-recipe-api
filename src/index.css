@@ -28,6 +28,9 @@ a {
   text-decoration: none;
   color: #92b1ba;
 }
+a:hover {
+  opacity: 0.8;
+}
 form {
   padding-right: 50px;
   float: right;

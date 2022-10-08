@@ -9,19 +9,18 @@ const Recipe = () => {
   let params = useParams();
   const [loading, setLoading] = useState("true");
 
+  useEffect(() => {
+    fetchDetails();
+  }, [params.id]);
+
   const fetchDetails = async () => {
     const data = await fetch(
       `https://api.spoonacular.com/recipes/${params.id}/information?apiKey=${process.env.REACT_APP_API_KEY}`
     );
     const detailData = await data.json();
     setDetails(detailData);
-    // console.log(detailData);
     setLoading(false);
   };
-
-  useEffect(() => {
-    fetchDetails();
-  }, [params.id]);
 
   return (
     <>

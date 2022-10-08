@@ -9,33 +9,33 @@ const Vegeta = () => {
     getVegeta();
   }, []);
 
-  // no cache version
-  // const getVegeta = async () => {
-  //   const api = await fetch(
-  //     `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&diet=vegetarian&number=6`
-  //   );
-  //   const data = await api.json();
-  //   setVegeta(data.results);
-  //   console.log(data.results);
-  // };
+  // no cache version for production
+  const getVegeta = async () => {
+    const api = await fetch(
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&diet=vegetarian&number=6`
+    );
+    const data = await api.json();
+    setVegeta(data.results);
+    console.log(data.results);
+  };
 
   // cache version for development purposes
-  const getVegeta = async () => {
-    const inCache = localStorage.getItem("vegeta");
+  // const getVegeta = async () => {
+  //   const inCache = localStorage.getItem("vegeta");
 
-    if (inCache) {
-      setVegeta(JSON.parse(inCache));
-    } else {
-      const api = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&diet=vegetarian&number=6`
-      );
-      const data = await api.json();
+  //   if (inCache) {
+  //     setVegeta(JSON.parse(inCache));
+  //   } else {
+  //     const api = await fetch(
+  //       `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&diet=vegetarian&number=6`
+  //     );
+  //     const data = await api.json();
 
-      localStorage.setItem("vegeta", JSON.stringify(data.results));
-      setVegeta(data.results);
-      // console.log("veg added to cache: ", data.results);
-    }
-  };
+  //     localStorage.setItem("vegeta", JSON.stringify(data.results));
+  //     setVegeta(data.results);
+  //     // console.log("veg added to cache: ", data.results);
+  //   }
+  // };
 
   return (
     <div className="vegeta container">

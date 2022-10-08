@@ -7,19 +7,18 @@ const Searched = () => {
   let params = useParams();
   const [loading, setLoading] = useState("true");
 
+  useEffect(() => {
+    getSearched(params.search);
+  }, [params.search]);
+
   const getSearched = async (name) => {
     const data = await fetch(
       `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${name}&number=6`
     );
     const recipes = await data.json();
     setSearchedRecipes(recipes.results);
-    // console.log(recipes.results);
     setLoading(false);
   };
-
-  useEffect(() => {
-    getSearched(params.search);
-  }, [params.search]);
 
   return (
     <>
