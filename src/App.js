@@ -14,6 +14,7 @@ function App() {
         </NavLink>
         <Search />
         <Cuisines />
+
         <Pages />
       </Router>
     </div>

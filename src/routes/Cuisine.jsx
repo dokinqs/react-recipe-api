@@ -5,17 +5,13 @@ const Cuisine = () => {
   const [cuisine, setCuisine] = useState([]);
   let params = useParams();
 
-  // useEffect(() => {
-  //   getCuisine();
-  // }, []);
-
   useEffect(() => {
     getCuisine(params.type);
   }, [params.type]);
 
   // cache results for development to save api calls
   const getCuisine = async (name) => {
-    // CHECK TO SEE IF name MATCHES ONE OF THE CUISINES
+    // check to see if name matches one of the valid cuisines
     const validSlugs = [
       "Chinese",
       "French",
@@ -43,9 +39,6 @@ const Cuisine = () => {
         setCuisine(data.results);
         console.log(data.results);
       }
-    } else {
-      // maybe put 404 page here later for invalid user-entered urls
-      console.log("user entered an invalid cuisine/url");
     }
   };
 

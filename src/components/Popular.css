@@ -7,10 +7,6 @@
   background-color: #7f9a7d;
   border-radius: 30px;
 }
-.vegeta.container {
-  background-color: #aebea1;
-  border-radius: 30px;
-}
 .cards {
   display: flex;
   flex-wrap: wrap;

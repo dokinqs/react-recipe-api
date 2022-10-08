@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Recommend from "../components/Recommend";
 import "./Recipe.css";
 
 const Recipe = () => {
@@ -18,7 +19,6 @@ const Recipe = () => {
     setLoading(false);
   };
 
-  // ??? useEffect has a missing dependency: 'fetchDetails'. Either include it or remove the dependency array
   useEffect(() => {
     fetchDetails();
   }, [params.id]);
@@ -27,26 +27,29 @@ const Recipe = () => {
     <>
       {loading && <div className="loading"></div>}
       {!loading && (
-        <div className="details">
-          <h3>{details.title}</h3>
-          <img
-            src={details.image}
-            alt={details.title}
-            className="details-img"
-          />
-          {/* FIXED ingredients: need to wait for api data to render. use ? after, like this: extendedIngredients? to check if data exists */}
-          <ul>
-            <h4>Ingredients</h4>
-            {details.extendedIngredients?.map((ingredient) => (
-              <li key={ingredient.id}>{ingredient.original}</li>
-            ))}
-          </ul>
-          <div className="details-instr-summ">
-            <h4>Instructions</h4>
-            <p dangerouslySetInnerHTML={{ __html: details.instructions }}></p>
-            <h4>Summary</h4>
-            <p dangerouslySetInnerHTML={{ __html: details.summary }}></p>
+        <div>
+          <div className="details">
+            <h3>{details.title}</h3>
+            <img
+              src={details.image}
+              alt={details.title}
+              className="details-img"
+            />
+            {/* use .extendedIngredients?.map to check if data exists yet */}
+            <ul>
+              <h4>Ingredients</h4>
+              {details.extendedIngredients?.map((ingredient) => (
+                <li key={ingredient.id}>{ingredient.original}</li>
+              ))}
+            </ul>
+            <div className="details-instr-summ">
+              <h4>Instructions</h4>
+              <p dangerouslySetInnerHTML={{ __html: details.instructions }}></p>
+              <h4>Summary</h4>
+              <p dangerouslySetInnerHTML={{ __html: details.summary }}></p>
+            </div>
           </div>
+          <Recommend />
         </div>
       )}
     </>

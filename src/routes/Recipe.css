@@ -9,6 +9,7 @@
   right: 0;
   width: 90px;
   height: 90px;
+
   border: 10px solid #dadada;
   border-top: 10px solid #12647b;
   border-radius: 50%;
@@ -24,10 +25,11 @@
 }
 
 .details {
-  padding: 20px;
+  padding: 30px;
   /* CENTER DIV */
   max-width: 1100px;
   margin: 0 auto;
+  background: #f4ead3;
 }
 .details h3 {
   margin: 0;

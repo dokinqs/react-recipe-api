@@ -1,6 +1,5 @@
 .search.container {
-  background: linear-gradient(to bottom, #a2b4ac, #fff);
-  border-radius: 30px;
+  background: linear-gradient(to top, #a2b4ac, #fff);
 }
 .search-error {
   width: 300px;

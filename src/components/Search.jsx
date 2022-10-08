@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Search.css";
 
 const Search = () => {
   const [input, setInput] = useState("");
-
   const navigate = useNavigate();
 
   const submitHandler = (e) => {
@@ -13,8 +13,8 @@ const Search = () => {
   };
   return (
     <div>
-      {/* <span>🔍</span> */}
       <form onSubmit={submitHandler}>
+        <span>🔍</span>
         <input
           type="text"
           value={input}

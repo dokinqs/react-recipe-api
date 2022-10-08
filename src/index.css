@@ -35,3 +35,8 @@ form {
 form input {
   padding: 5px;
 }
+.page404 {
+  width: 300px;
+  margin: 50px auto;
+  color: #e36262;
+}
