@@ -20,9 +20,6 @@ const Cuisines = () => {
       <NavLink to={"cuisine/Korean"}>
         <h6>Korean</h6>
       </NavLink>
-      <NavLink to={"cuisine/Mediterranean"}>
-        <h6>Mediterranean</h6>
-      </NavLink>
       <NavLink to={"cuisine/Middle+Eastern"}>
         <h6>Middle Eastern</h6>
       </NavLink>
