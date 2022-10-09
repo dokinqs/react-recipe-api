@@ -16,7 +16,6 @@ const Vegeta = () => {
     );
     const data = await api.json();
     setVegeta(data.results);
-    console.log(data.results);
   };
 
   // cache version for development purposes

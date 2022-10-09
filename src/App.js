@@ -10,7 +10,7 @@ function App() {
       <Router>
         <NavLink to={"/"}>
           <h1 className="home-logo">Gud Recipes</h1>
-          <h5>for your gut</h5>
+          <h5 className="home-sub">for your gut</h5>
         </NavLink>
         <Search />
         <Cuisines />

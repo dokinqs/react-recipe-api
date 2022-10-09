@@ -5,7 +5,9 @@
   border-radius: 30px;
 }
 .popular.container {
-  background-color: #7f9a7d;
+  background-color: #ccdfde;
+  margin: 0;
+  border-radius: 0;
 }
 .cards {
   display: flex;

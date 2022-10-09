@@ -13,9 +13,13 @@ h2 {
   margin: 10px;
 }
 .home-logo {
+  margin: 0;
   padding-left: 30px;
   letter-spacing: 2px;
-  margin-bottom: 0;
+  background: #92b1ba;
+}
+.home-sub {
+  background: #92b1ba;
 }
 h5 {
   margin: 0;
@@ -32,6 +36,7 @@ a:hover {
   opacity: 0.8;
 }
 form {
+  margin: 14px;
   padding-right: 50px;
   float: right;
 }
