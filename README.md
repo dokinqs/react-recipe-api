@@ -2,7 +2,7 @@
 
 includes: loading, recommendations, search input, selection nav, 404 page
 
-<img src="https://user-images.githubusercontent.com/22225317/194679165-eec2a63d-f29d-4391-be73-e88dff40c077.jpg" width="400" height="240" />
-<img src="https://user-images.githubusercontent.com/22225317/194679164-9aa070ed-fb68-4493-9884-70f3fbd68696.jpg" width="400" height="400" />
-<img src="https://user-images.githubusercontent.com/22225317/194679163-80093498-dd3e-4d07-8612-44c79d191a14.jpg" width="210" height="450" />
-<img src="https://user-images.githubusercontent.com/22225317/194679162-47d52736-9eb6-44f0-b4e9-067e133abe7b.jpg" width="150" height="150" />
+<img src="https://user-images.githubusercontent.com/22225317/194779886-3d41d985-909f-4a7d-8c2e-c99519396da1.jpg" width="360" height="260" />
+<img src="https://user-images.githubusercontent.com/22225317/194779888-03c6e7bf-a7ec-47bb-8643-9bff2539558b.jpg" width="440" height="240" />
+<img src="https://user-images.githubusercontent.com/22225317/194780182-d368e855-89bf-4ff1-b3ef-8f1d8cf84c78.jpg" width="280" height="270" />
+<img src="https://user-images.githubusercontent.com/22225317/194779887-b1df8f5d-b33b-48ed-90b4-060a34798154.jpg" width="180" height="400" />
