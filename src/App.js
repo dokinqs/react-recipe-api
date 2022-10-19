@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, NavLink } from "react-router-dom";
+// import { BrowserRouter, NavLink } from "react-router-dom";
+import { HashRouter, NavLink } from "react-router-dom";
 import Cuisines from "./components/Cuisines";
 import Pages from "./routes/Pages";
 import Search from "./components/Search";
@@ -7,7 +8,7 @@ import Search from "./components/Search";
 function App() {
   return (
     <div>
-      <Router>
+      <HashRouter>
         <NavLink to={"/"}>
           <h1 className="home-logo">Gud Recipes</h1>
           <h5 className="home-sub">for your gut</h5>
@@ -16,7 +17,7 @@ function App() {
         <Cuisines />
 
         <Pages />
-      </Router>
+      </HashRouter>
     </div>
   );
 }
